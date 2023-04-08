@@ -19,15 +19,30 @@ body, input, button {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-form {
-    padding: 3.2rem 2.4rem;
+main {
     max-width: 37.5rem;
+    padding-top: 6.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4.4rem;
     margin: auto;
 }
 
+form {
+    width: 100%;
+    padding: 3.2rem 2.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4.8rem;
+}
+
 #credit-card {
-    width: 32.8rem;
-    height: 21.2rem;
+    width: 31rem;
+    height: 18.8rem;
 
     perspective: 60rem;
 }
@@ -53,6 +68,7 @@ form {
 #credit-card .back {
     background: url(https://i.ibb.co/kDnMdtZ/cc-back.png) no-repeat;
     transform: rotateY(-180deg);
+    top: -4px;
 }
 
 #credit-card:active .front,
@@ -66,23 +82,11 @@ form {
 }
 
 
-
-.container-card {
-    max-width: 37.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    margin: 6.4rem 0 4.4rem;
-    gap: 4.8rem;
-}
-
 .flex {
     display: flex;
 }
 
 .inputs {
-    margin-top: 4.8rem;
     flex-direction: column;
     gap: 2.4rem;
 }
@@ -90,7 +94,10 @@ form {
 label {
     font-weight: 600;
     font-size: 1.4rem;
+    line-height: 1.6rem;
     color: #E5E7EB;
+    gap: .4rem;
+    align-items: center;
 }
 
 input {
@@ -103,15 +110,63 @@ input {
     color: #F3F4F6;
 }
 
+input:invalid:focus {
+    border: 0.15rem solid #FB7185;
+}
+
+input + .warning {
+    display: none;
+}
+
+input:invalid:focus + .warning {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    margin-top: .8rem;
+    color: #FB7185;
+
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+
 input:focus {
     outline: 0.15rem solid #9333EA;
 }
 
 .col-2 {
     gap: 2.4rem;
-    align-items: center;
+    align-items: flex-end;
 }
 
-.col-2 .input-wrapper:nth-child(1) {
+.col-2 .input-wrapper:nth-child(2) {
     flex-basis: 40%;
+}
+
+.info-security {
+    justify-content: center;
+    gap: .8rem;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    color: #E5E7EB;
+}
+
+button {
+    height: 5.6rem;
+    width: calc(100% - 4.8rem);
+    padding: 1.6rem;
+    border: none;
+    background: #9333EA;
+    box-shadow: 0 .4rem 1.6rem rgba(0, 0, 0, 0.1);
+    border-radius: .4rem;
+    margin: 2.4rem auto;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 2.4rem;
+    color: #F9FAFB; 
+    cursor: pointer;
+    transition: background .2s;
+}
+
+button:hover {
+    background: #A855F7;
 }
